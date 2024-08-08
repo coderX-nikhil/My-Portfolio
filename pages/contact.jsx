@@ -202,7 +202,7 @@ const Contact = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isOffline, setIsOffline] = useState(!navigator.onLine);
+    // const [isOffline, setIsOffline] = useState(!navigator.onLine);
 
     useEffect(() => {
         const handleOnline = () => setIsOffline(false);
