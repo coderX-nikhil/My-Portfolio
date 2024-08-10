@@ -219,11 +219,6 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (isOffline) {
-            setModalContent('You are currently offline. Please check your internet connection.');
-            setIsModalOpen(true);
-            return;
-        }
 
         setIsSubmitting(true);
 
@@ -239,17 +234,16 @@ const Contact = () => {
             }
             return response.json();
         })
-        .then(() => {
-            setModalContent('Message sent successfully!');
-            setIsModalOpen(true);
-            form.reset(); // Reset the form after successful submission
-        })
-        .catch(() => {
-        })
+        // .then(() => {
+        //     setModalContent('Message sent successfully!');
+        //     setIsModalOpen(true);
+        //     form.reset(); // Reset the form after successful submission
+        // })
         .finally(() => {
-            setIsSubmitting(false); // Hide the loader regardless of success or failure
+            setIsSubmitting(false); 
         });
     };
+
 
     return (
         <BannerLayout>
